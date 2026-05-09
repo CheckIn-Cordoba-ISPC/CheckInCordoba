@@ -1,0 +1,62 @@
+<mxfile host="65bd71144e">
+    <diagram id="CU1_Pro" name="Check-in Nivel Profesional">
+        <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                
+                <mxCell id="actor_rec" value="Recepcionista" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="280" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_db" value="Base de Datos&#10;(Sistema Externo)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="750" y="280" width="30" height="60" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="sys_box" value="Sistema Check-In Córdoba" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="80" width="520" height="520" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="cu_main" value="Registrar Ingreso&#10;(Check-in)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" vertex="1" parent="sys_box">
+                    <mxGeometry x="50" y="210" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_login" value="&lt;&lt;abstract&gt;&gt;&#10;Validar Identidad" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="sys_box">
+                    <mxGeometry x="320" y="50" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_disp" value="Verificar Estado&#10;de Habitación" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="sys_box">
+                    <mxGeometry x="320" y="140" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_dni" value="Validar DNI&#10;(Huésped)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="sys_box">
+                    <mxGeometry x="320" y="230" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_error" value="Gestionar Error:&#10;Habitación Ocupada" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="sys_box">
+                    <mxGeometry x="320" y="340" width="150" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="cu_log" value="Registrar Log de&#10;Transacción" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="sys_box">
+                    <mxGeometry x="320" y="440" width="140" height="60" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="rel1" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_rec" target="cu_main">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc1" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="sys_box" source="cu_main" target="cu_login">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc2" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="sys_box" source="cu_main" target="cu_disp">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc3" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="sys_box" source="cu_main" target="cu_dni">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ext1" value="&lt;&lt;extend&gt;&gt;" style="endArrow=open;dashed=1;html=1;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="sys_box" source="cu_error" target="cu_main">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc4" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="sys_box" source="cu_main" target="cu_log">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_db" value="" style="endArrow=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_db" target="cu_log">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
