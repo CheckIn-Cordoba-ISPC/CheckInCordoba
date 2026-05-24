@@ -1,0 +1,22 @@
+<mxfile host="65bd71144e">
+    <diagram id="CU2_Pro" name="Experiencias Barrios">
+        <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="actor_rec" value="Recepcionista" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1"><mxGeometry x="50" y="280" width="30" height="60" as="geometry"/></mxCell>
+                <mxCell id="actor_org" value="Centro Vecinal /&#10;Cooperativa" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1"><mxGeometry x="750" y="280" width="30" height="60" as="geometry"/></mxCell>
+                <mxCell id="sys_box" value="Sistema Check-In Córdoba" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="160" y="80" width="520" height="480" as="geometry"/></mxCell>
+                <mxCell id="cu_main" value="Gestionar Experiencias&#10;Barriales" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontStyle=1" vertex="1" parent="sys_box"><mxGeometry x="50" y="200" width="180" height="80" as="geometry"/></mxCell>
+                <mxCell id="cu_agenda" value="Consultar Agenda&#10;Cultural Local" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="sys_box"><mxGeometry x="320" y="100" width="150" height="70" as="geometry"/></mxCell>
+                <mxCell id="cu_vouc" value="Generar Voucher&#10;de Identidad Local" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="sys_box"><mxGeometry x="320" y="210" width="150" height="70" as="geometry"/></mxCell>
+                <mxCell id="cu_cupo" value="Validar Cupos&#10;Comunitarios" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="sys_box"><mxGeometry x="320" y="320" width="150" height="70" as="geometry"/></mxCell>
+                <mxCell id="inc1" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="sys_box" source="cu_main" target="cu_agenda"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="inc2" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="sys_box" source="cu_main" target="cu_vouc"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="inc3" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="sys_box" source="cu_main" target="cu_cupo"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="rel1" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="actor_rec" target="cu_main"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="rel2" value="Aviso de Visita" style="endArrow=none;html=1;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="cu_vouc" target="actor_org"><mxGeometry relative="1" as="geometry"/></mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
